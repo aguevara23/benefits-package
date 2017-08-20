@@ -8,13 +8,15 @@ const schema = require('./schema/schema');
 const app = express();
 
 // Replace with your mongoLab URI
-const MONGO_URI = '';
+const MONGO_URI = 'mongodb://Alex:test123@ds161860.mlab.com:61860/benefits-package-db';
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
 
 mongoose.Promise = global.Promise;
-mongoose.connect(MONGO_URI);
+mongoose.connect(MONGO_URI, {
+  useMongoClient: true
+});
 mongoose.connection
     .once('open', () => console.log('Connected to MongoLab instance.'))
     .on('error', error => console.log('Error connecting to MongoLab:', error));
