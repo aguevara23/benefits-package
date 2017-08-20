@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon index.js --ignore client",
-    "start": "node index.js --ignore client"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -43,7 +43,4 @@
     "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0"
   },
-  "devDependencies": {
-    "jquery": "^3.2.1"
-  }
 }
