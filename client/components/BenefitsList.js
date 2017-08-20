@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
-import { Link } from 'react-router';
+import { Link, Redirect, hashHistory } from 'react-router';
 import query from '../queries/fetchBenefits';
 import $ from 'jquery';
+// import logo from '../images/dough-logo.jpg';
 
 class BenefitsList extends Component {
   constructor(props) {
@@ -12,9 +13,12 @@ class BenefitsList extends Component {
     this.state = { salary: '65000'};
     // console.log($(this)[0].state.salary)
     // console.log("test");
-
-
   }
+
+  submitForm(event) {
+    event.preventDefault();
+    hashHistory.push('/success');
+}
 
 
   renderBenefits() {
@@ -49,19 +53,33 @@ class BenefitsList extends Component {
     // }
 
     if($('.benefits-card').hasClass("deselected")){
-      alert("deselected");
+    console.log("deselected");
      this.setState({ salary: this.state.salary - ({cost}.cost)*-1})
    }
 
     return (
-      <div className="benefits-container">
-        <div className="net-salary">
-          <div className="salary-net">${this.state.salary}</div>
-          <div className="salary-text">Total Compensation</div>
+    <div className="container">
+
+      <div className="header">
+        <div className="header-login">
+          <div className="header-login-logo">
+            <a href="#">Dough</a>
+          </div>
+          <div className="header-login-user">Hi, Ben Iffitz!</div>
+          <button className="submit-button"><a href="#">Log Out</a></button>
         </div>
+        <div className="salary-net">${this.state.salary}</div>
+        <div className="salary-text">Total Compensation</div>
+        <hr />
+      </div>
+      <div className="benefits-container">
         {this.renderBenefits()}
+        <form className="benefits-submit" onSubmit={this.submitForm}>
+        <button type="submit" className="benefits-submit-button">Submit</button>
+        </form>
       </div>
 
+    </div>
     )
   }
 }

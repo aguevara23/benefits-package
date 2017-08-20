@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
+import { Redirect, hashHistory } from 'react-router';
 
 class Login extends Component {
-//   constructor(props) {
-//   super(props);
-//
-//   this.state = { title: ''};
-// }
-//   onSubmit(event) {
-//   event.preventDefault();
-//     .then(() => hashHistory.push('/benefits'))
-// }
+  constructor(props) {
+  super(props);
+
+  this.state = {
+
+  };
+}
+  submitForm(event) {
+    event.preventDefault();
+    hashHistory.push('/benefits');
+}
 
   render() {
-
     return (
       <div className="benefits">
         <div className="wrapper">
-          <a className="form-logo" href="#">Logo</a>
-          <form className="benefits-form">
-            <input className="form-input" placeholder="email" />
-            <input className="form-input" placeholder="password" />
-            <button className="submit-button">Submit</button>
+          <form className="benefits-form" onSubmit={this.submitForm}>
+            <div className="login-logo">
+              <a href="#">Dough</a>
+            </div>
+            <input className="form-input" placeholder="email" name="email" />
+            <input className="form-input" placeholder="password" name="password"/>
+            <button className="submit-button" type="submit">Login</button>
           </form>
         </div>
 

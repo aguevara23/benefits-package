@@ -10,6 +10,7 @@ import App from './components/App';
 import Benefits from './components/Benefits';
 import Login from './components/Login';
 import BenefitsList from './components/BenefitsList';
+import SuccessPage from './components/Success';
 
 const client = new ApolloClient({
   dataIdFromObject: o => o.id
@@ -41,6 +42,7 @@ ReactDOM.render(
         // <IndexRoute component={Login} />
         <Route path="login" component={Login} />
         <Route path="benefits" component={BenefitsList} />
+        <Route path="success" component={SuccessPage} />
       </Route>
     </Router>
   </ApolloProvider>

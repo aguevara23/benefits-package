@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -25,14 +26,15 @@ height, body {
   flex-direction: column;
   align-items: center;
   height:100%;
-  background: rgba(255, 0, 0, 0.5);
+  width: 80%;
+  /*background: rgba(255, 0, 0, 0.5);*/
 }
 
 .wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.25);
+  /*background: rgba(0,0,0,0.25);*/
   height: 60vh;
   width: 60vw;
   display: flex;
@@ -41,6 +43,7 @@ height, body {
 .benefits-form {
   border: 1px solid black;
   width: 80%;
+  padding: 10% 10%;
 }
 
 .benefits-container{
@@ -51,7 +54,8 @@ height, body {
   flex-wrap: wrap;
   justify-content: space-between;
   overflow: auto;
-  padding-top: 5%;
+  padding-top: 20%;
+  padding-bottom: 50px;
 }
 
 .benefits-card {
@@ -88,6 +92,23 @@ height, body {
   text-align: center;
 }
 
+.benefits-submit {
+  width: 100%;
+  /*background: red;*/
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.benefits-submit-button {
+  background: lightblue;
+  border: none;
+  width: 30%;
+  padding: 10px 20px;
+  border: 3 px solid black;
+}
+
 .container {
   margin: 0;
   display: flex;
@@ -96,13 +117,18 @@ height, body {
   width: 100%;
 }
 
-.net-salary {
+.header {
   width: 100%;
-  border: 5px solid gray;
+  /*border: 5px solid gray;*/
   text-align: center;
-  margin-bottom: 30px;
-  margin-left: 25%;
-  margin-right: 25%;
+  /*margin-bottom: 30px;*/
+  /*margin-left: 25%;
+  margin-right: 25%;*/
+  position: fixed;
+  background-color: white;
+  z-index: 10;
+  align-self: flex-start;
+  padding-bottom: 20px;
 }
 
 .salary-net {
@@ -125,4 +151,45 @@ height, body {
   background: gray;
   opacity: .5;
   transition: all .2s ease-out;
+}
+
+.submit-button {
+  background: lightblue;
+  border: none;
+  padding: 5px 20px;
+}
+
+.header-login{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 50px;
+
+}
+
+.header-login-user {
+  padding-right: 30px;
+
+}
+
+.header-login-logo {
+  color: gray;
+  text-align: left;
+  flex: 1;
+  font-size: 2rem;
+  padding-left: 30px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.login-logo {
+  color: gray;
+  flex: 1;
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
 }
