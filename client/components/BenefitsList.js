@@ -78,7 +78,6 @@ class BenefitsList extends Component {
         <button type="submit" className="benefits-submit-button">Submit</button>
         </form>
       </div>
-
     </div>
     )
   }
